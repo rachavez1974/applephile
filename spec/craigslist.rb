@@ -89,6 +89,14 @@ let!(:state_names) {
     end
   end
 
+  describe "#get_state_cities" do
+    it "it returns an array of cities belonging to that state" do
+      state_cities = cl_first.get_state_cities("Minnesota")
+      expect(state_cities).to include("bemidji")
+      expect(state_cities).to include("brainerd")
+      expect(state_cities).to include("duluth")
+    end
+  end
 end
 
 
