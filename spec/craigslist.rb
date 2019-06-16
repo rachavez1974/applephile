@@ -64,6 +64,15 @@ let!(:state_names) {
     end
   end
 
+  describe "#cities_and_links" do
+    it "it uses html scraped to collect cities and their links, test for three states." do
+    links = cl_first.send(:cities_and_links)
+    expect(links[0][0]).to include(cities_and_links_data[0])
+    expect(links[5][4]).to include(cities_and_links_data[1])
+    expect(links[10][6]).to include(cities_and_links_data[2])      
+    end
+  end
+
 
 
   
