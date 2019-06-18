@@ -16,6 +16,17 @@ class CLI
     gets.chomp
   end
 
+  def get_menu_input
+    display_states
+    puts "Please enter a number for the state you'd like to scrape.".colorize(:green)
+    #convert number input from user
+    @state_scraped = convert_to_state(gets.chomp)
+    display_cities(@state_scraped)
+    puts "Please enter a number for the city you'd like to scrape.".colorize(:green)
+    @city_scraped = convert_to_city(@state_scraped, gets.chomp)
+    puts "You have chosen the state of #{@state_scraped}, and the city of #{@city_scraped.capitalize}."
+  end
+
   def display_states
     @scrape.get_states_names.each_with_index do |state, index|
       print "#{index + 1}. #{state}    ".ljust(28) 
