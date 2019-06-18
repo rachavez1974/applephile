@@ -90,9 +90,12 @@ module Applephile
                           :city_url => @scraped_city_url})
         phones_array.each do |phone_info| 
           @city.add_item(Item.new(phone_info))
+        end
       end
     end
-  end
+
+
+
 
     def get_choice
       puts "Enter number to see link phone on browser.".colorize(:cyan)
