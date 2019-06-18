@@ -64,8 +64,11 @@ class CLI
     @scraped_city_url = @scrape.return_city_link(@state_scraped, @city_scraped)
     @phones = @scrape.scrape_by_city_url(@scraped_city_url)
   end
-
-
+  
+  def grab_apple_prodcuts
+    puts "Price enter a price higher than 150 to see the list of phones, defualt price is 150.".colorize(:blue)
+    display_apple_products_info(@city.get_apple_prods_by_price(gets.chomp))
+  end
 
   def get_choice
     puts "Enter number to see link phone on browser.".colorize(:cyan)
