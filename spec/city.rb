@@ -32,5 +32,28 @@ RSpec.describe "City" do
     end
   end
 
+  describe "#add_item" do
+    it "it accpets an item, and adds it to @items instance variable for city, and it returns that item" do
+      item = Item.new(first_phone)
+      city_item = first_city.add_item(item)
+      
+      expect(first_city.items).to include(item)
+      expect(first_city.add_item(item)).to eq(city_item)
+    end
+  end
+
+  describe "#get_apple_prods_by_price" do
+    it "it accpets a price, then it returns all
+      the items that are greater than or equals to that price" do
+      city_a_hash = {:name => "las vegas", :state => "Nevada",
+                      :city_url => "https://lasvegas.craigslist.org/"}
+      city_a = City.new(city_a_hash)
+      city_a = add_items_to_city(city_a)
+      length = city_a.get_apple_prods_by_price(200).length
+      expect(city_a.get_apple_prods_by_price(200)[rand(0..length - 1)].price).to be >= "200"
+      
+    end
+  end
+
 end
 
