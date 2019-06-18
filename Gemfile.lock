@@ -30,10 +30,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  colorize
-  nokogiri
+  colorize (~> 0.8.1)
+  nokogiri (~> 1.10.3)
   pry
-  require_all
+  require_all (~> 2.0.0)
   rspec
 
 BUNDLED WITH
