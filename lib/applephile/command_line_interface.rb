@@ -94,9 +94,6 @@ module Applephile
       end
     end
 
-
-
-
     def get_choice
       puts "Enter number to see link phone on browser.".colorize(:cyan)
       puts "next for more phones".colorize(:green)
