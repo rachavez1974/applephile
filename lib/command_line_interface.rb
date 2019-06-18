@@ -3,7 +3,16 @@ class CLI
 
   def run
     @scrape = CraigsList.new
-
+     puts INTRO_MESSAGE
+    choice = ""
+    while choice != "exit"      
+      choice = display_main_menu
+      if choice == "scrape"
+        get_menu_input
+        create_items_from_array(scrape_apple_prodcuts)
+        grab_apple_prodcuts
+      end
+    end
   end
     
   
@@ -64,7 +73,7 @@ class CLI
     @scraped_city_url = @scrape.return_city_link(@state_scraped, @city_scraped)
     @phones = @scrape.scrape_by_city_url(@scraped_city_url)
   end
-  
+
   def grab_apple_prodcuts
     puts "Price enter a price higher than 150 to see the list of phones, defualt price is 150.".colorize(:blue)
     display_apple_products_info(@city.get_apple_prods_by_price(gets.chomp))
