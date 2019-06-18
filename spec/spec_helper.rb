@@ -1,5 +1,4 @@
-require "bundler/setup"
-require 'craigslist'
+require_relative '../config/environment.rb'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

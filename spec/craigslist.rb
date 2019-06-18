@@ -1,6 +1,4 @@
 require "spec_helper"
-require_relative "../lib/craigslist.rb"
-
 
 RSpec.describe "CraigsList" do  
 let!(:cl_first) {CraigsList.new()}
