@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require_relative '../config/environment.rb'
 
-CLI.new.run
+Applephile::CLI.new.run
