@@ -3,7 +3,7 @@ module Applephile
     INTRO_MESSAGE = "WELCOME TO CRAIGSLIST SCRAPPER!"
 
     def run
-      @scrape = CraigsList.new
+      @scrape = Applephile::CraigsList.new
        puts INTRO_MESSAGE
       choice = ""
       while choice != "exit"      
@@ -86,10 +86,10 @@ module Applephile
         get_menu_input
         create_items_from_array(scrape_apple_products())
       else
-        @city = City.new({:name => @city_scraped, :state => @state_scraped,
+        @city = Applephile::City.new({:name => @city_scraped, :state => @state_scraped,
                           :city_url => @scraped_city_url})
         phones_array.each do |phone_info| 
-          @city.add_item(Item.new(phone_info))
+          @city.add_item(Applephile::Item.new(phone_info))
         end
       end
     end
