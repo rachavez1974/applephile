@@ -22,7 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+  @scrape = Applephile::CraigsList.new
+  @city = Applephile::City.new({:name => @city_scraped, :state => @state_scraped,
+                          :city_url => @scraped_city_url})
+  Applephile::Item.new(:city => "Oakland", :price => "350", :description => "Yarayara", :url => "www.geherdone.com")
 
 ## Development
 
