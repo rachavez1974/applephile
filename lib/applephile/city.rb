@@ -9,7 +9,7 @@ module Applephile
       city_attributes.each {|key, value| self.send(("#{key}="), value)}
       @items = []
       @@all << self
-    end
+    end 
 
     def add_item(item)
       item.city = self

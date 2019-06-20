@@ -15,7 +15,6 @@ module Applephile
         end
       end
     end
-      
     
     def display_main_menu
       stars = "************************".colorize(:yellow)

@@ -21,16 +21,12 @@ module Applephile
       #1. find the state first.
       #2. then collect the state's city array, return a flatten array so only cities can be used
       #to be displayed in CLI
-      state_cities_array = []
       states_cities_links.each do |states, cities_links|
         if states.to_s == state_name 
           #collect only cities
-          state_cities_array = cities_links.collect { |city| city.keys }
-          break
+         return cities_links.collect { |city| city.keys }.flatten!
         end
       end
-      state_cities_array.flatten!  
-
     end
 
     def return_city_link(state, city)
@@ -50,6 +46,7 @@ module Applephile
       end
       city_url
     end
+    
     def scrape_by_city_url(city_url)
       items_array_of_hashes = []
       #1. returns an array of hashes for every link (phone found) for a particular scrape criteria
