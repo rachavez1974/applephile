@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_runtime_dependency 'nokogiri', '~> 1.10.3'
+  spec.add_runtime_dependency 'nokogiri', '>= 1.10.3', '< 1.14.0'
   spec.add_runtime_dependency 'require_all', '~> 2.0.0'
   spec.add_runtime_dependency 'colorize', '~> 0.8.1'
 end
